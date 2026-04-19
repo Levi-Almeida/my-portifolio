@@ -25,7 +25,7 @@ const Hero = () => {
     }))
 
     const StyledImg = styled("img")(() => ({
-        width: "80%",
+        width: "75%",
         borderRadius: "50%",
 
         border: `1px solid ${theme.palette.primary.contrastText}`,
