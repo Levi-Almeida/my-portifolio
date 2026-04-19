@@ -16,14 +16,20 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: "100px"
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingTop: "0px"
+        }
     }))
 
     const StyledImg = styled("img")(() => ({
         width: "80%",
         borderRadius: "50%",
-        
+
         border: `1px solid ${theme.palette.primary.contrastText}`,
-        
+
     }))
 
     return (
@@ -31,13 +37,13 @@ const Hero = () => {
             <StyledHero>
                 <Container sx={{ maxWidth: "lg" }}>
                     <Grid container spacing={2}>
-                        <Grid size={{ xs: 12, md: 5}}>
+                        <Grid size={{ xs: 12, md: 5 }}>
                             <Box sx={{ position: "relative", pb: 3 }}>
 
                                 <Box sx={{ position: "absolute", width: "150%", top: -100, right: 0 }} >
                                     <AnimatedBackground />
                                 </Box>
-                                <Box sx={{ textAlign:"center", position:"relative"}} >
+                                <Box sx={{ textAlign: "center", position: "relative" }} >
                                     <StyledImg src={Avatar} />
                                 </Box>
                             </Box>
