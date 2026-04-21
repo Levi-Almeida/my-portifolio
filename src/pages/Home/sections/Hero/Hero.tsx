@@ -59,7 +59,7 @@ const Hero = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                     }}>
-                                    <StyledButton>
+                                    <StyledButton onClick={()=> console.log("btn Download")}>
                                         <DownloadIcon />
                                         <Typography>
                                             Download CV
@@ -71,7 +71,7 @@ const Hero = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                     }}>
-                                    <StyledButton>
+                                    <StyledButton onClick={()=> console.log("btn Download")}>
                                         <EmailIcon />
                                         <Typography>
                                             Contact me
