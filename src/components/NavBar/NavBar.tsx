@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { AppBar, MenuList, Toolbar } from "@mui/material"
+import { AppBar, MenuList, Toolbar, Typography } from "@mui/material"
 
 
 const NavBar = () => {
@@ -13,9 +13,9 @@ const NavBar = () => {
     <>
       <AppBar position="absolute">
         <StyledToolbar>
-          <MenuList>About</MenuList>
-          <MenuList>Skills</MenuList>
-          <MenuList>Projects</MenuList>
+          <MenuList><Typography sx={{ color: (theme) => theme.palette.primary.contrastText, cursor: "pointer" }} align="center"> About</Typography></MenuList>
+          <MenuList><Typography sx={{ color: (theme) => theme.palette.primary.contrastText, cursor: "pointer" }} align="center">Skills</Typography></MenuList>
+          <MenuList><Typography sx={{ color: (theme) => theme.palette.primary.contrastText, cursor: "pointer" }} align="center">Projects</Typography></MenuList>
         </StyledToolbar>
       </AppBar>
     </>
