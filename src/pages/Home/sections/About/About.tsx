@@ -15,33 +15,33 @@ const AboutSection: React.FC = () => {
     }));
 
     const skillsSet = [
-        "Javascript", "Typescript", "React", "Next", "Git", "HTML", "CSS", "Cypress", "AWS", "GCP", "Material UI", "Figma"
+        "Javascript", "Typescript", "React", "Next", "Git", "HTML", "CSS", ".Net", "AWS", "RPA", "Oracle SQL", "Automation"
     ]
 
     return (
         <>
             <Container maxWidth="lg">
                 <Box id="about" sx={{ pt: 5, mb: 3 }}>
-                    <Typography sx={{ variant: "h2", textAlign: "center" }} >About me</Typography>
+                    <Typography sx={{ color: (theme) => theme.palette.primary.main, pb: 2 }} variant="h2" align="center" >About me</Typography>
                 </Box>
-                <Grid container sx={{ spacing: 2, display: "flex", justifyContent: "center", pb: 3 }}>
-                    <Grid sx={{ xs: 8, md: 3 }}>
+                <Grid container spacing={3} sx={{ display: "flex", justifyContent: "center", pb: 3 }}>
+                    <Grid size={{ xs: 8, md: 3 }}>
                         <AnimationComponent moveDirection="right">
                             <StyledCard variant="outlined">
                                 <WorkspacePremiumIcon />
                                 <Typography sx={{ textAlign: "center", fontWeight: 600 }}>Experience</Typography>
-                                <Typography sx={{ textAlign: "center" }}>1+ years</Typography>
-                                <Typography sx={{ textAlign: "center" }}>Frontend Development</Typography>
+                                <Typography sx={{ textAlign: "center" }}>2 years</Typography>
+                                <Typography sx={{ textAlign: "center" }}>Tecnology Intern</Typography>
                             </StyledCard>
                         </AnimationComponent>
                     </Grid>
-                    <Grid sx={{ xs: 8, md: 3 }}>
+                    <Grid size={{ xs: 8, md: 3 }}>
                         <AnimationComponent moveDirection="left">
                             <StyledCard variant="outlined">
                                 <SchoolIcon />
                                 <Typography sx={{ textAlign: "center", fontWeight: 600 }}>Education</Typography>
                                 <Typography sx={{ textAlign: "center" }}>Bachelors Degree</Typography>
-                                <Typography sx={{ textAlign: "center" }}>Electrical Engineer</Typography>
+                                <Typography sx={{ textAlign: "center" }}>Systems Analist</Typography>
                             </StyledCard>
                         </AnimationComponent>
 
@@ -64,13 +64,13 @@ const AboutSection: React.FC = () => {
                 </Box>
                 <hr />
                 <Box sx={{ id: "skills", pt: 1, mb: 3 }}>
-                    <Typography sx={{ variant: "h3", textAlign: "center", fontWeight: 300 }}>Skills</Typography>
+                    <Typography variant="h3" sx={{ textAlign: "center", fontWeight: 300 }}>Skills</Typography>
                 </Box>
                 <Box sx={{ mb: 5 }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {skillsSet.map((skill, index) => (
                             <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-                                <StyledCard sx={{ variant: "outlined" }} >
+                                <StyledCard variant="outlined" >
                                     {skill}
                                 </StyledCard>
                             </Grid>
