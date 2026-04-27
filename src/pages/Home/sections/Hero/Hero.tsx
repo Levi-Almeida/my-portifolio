@@ -8,6 +8,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/StytledButton/StyledButton";
 import theme from "../../../../theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import CV from "../../../../assets/files/Levi_Full-Stack.pdf";
 
 const Hero = () => {
 
@@ -31,6 +32,16 @@ const Hero = () => {
         border: `1px solid ${theme.palette.primary.contrastText}`,
 
     }))
+
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = CV;
+        link.download = "Levi-Almeida-CV.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
     return (
         <>
@@ -59,7 +70,7 @@ const Hero = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                     }}>
-                                    <StyledButton onClick={()=> console.log("btn Download")}>
+                                    <StyledButton onClick={() => handleDownload()}>
                                         <DownloadIcon />
                                         <Typography>
                                             Download CV
@@ -71,7 +82,7 @@ const Hero = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                     }}>
-                                    <StyledButton onClick={()=> console.log("btn Download")}>
+                                    <StyledButton onClick={() => console.log("btn Download")}>
                                         <EmailIcon />
                                         <Typography>
                                             Contact me
