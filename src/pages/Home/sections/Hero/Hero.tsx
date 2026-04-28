@@ -4,11 +4,12 @@ import { Box, Container, Grid, Typography } from "@mui/material"
 
 
 import DownloadIcon from '@mui/icons-material/Download';
-import EmailIcon from '@mui/icons-material/Email';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import StyledButton from "../../../../components/StytledButton/StyledButton";
 import theme from "../../../../theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 import CV from "../../../../assets/files/Levi_Full-Stack.pdf";
+import Typewriter from "../../../../components/TypeWriter/TypeWriter";
 
 const Hero = () => {
 
@@ -43,6 +44,14 @@ const Hero = () => {
         document.body.removeChild(link);
     }
 
+    const handleWhatsApp = () => {
+        const message = encodeURIComponent(
+            "Olá Levi, vi seu portfólio e gostaria de conversar!"
+        );
+
+        window.open(`https://wa.me/5511914898784?text=${message}`, "_blank");
+    };
+
     return (
         <>
             <StyledHero>
@@ -62,7 +71,7 @@ const Hero = () => {
                         </Grid>
                         <Grid size={{ xs: 12, md: 7 }}>
                             <Typography sx={{ color: (theme) => theme.palette.primary.contrastText, pb: 2 }} variant="h1" align="center">Levi Almeida</Typography>
-                            <Typography sx={{ color: (theme) => theme.palette.primary.contrastText }} variant="h2" align="center">I'm a Software Engineer</Typography>
+                            <Typewriter text="I'm a Software Developer" delay={120} variant="h3" color="primary.contrastText" />
 
                             <Grid container spacing={3} sx={{ display: "flex", justifyContent: "center", pt: 3 }}>
                                 <Grid size={{ xs: 12, md: 4 }}
@@ -82,8 +91,8 @@ const Hero = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                     }}>
-                                    <StyledButton onClick={() => console.log("btn Download")}>
-                                        <EmailIcon />
+                                    <StyledButton onClick={handleWhatsApp}>
+                                        <WhatsAppIcon />
                                         <Typography>
                                             Contact me
                                         </Typography>
