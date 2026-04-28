@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
     }));
 
     const skillsSet = [
-        "Javascript", "Typescript", "React", "Next", "Git", "HTML", "CSS", ".Net", "AWS", "RPA", "Oracle SQL", "Automation"
+        "React", "NodeJs", "Typescript", "Javascript", "Git", "HTML", "CSS", ".Net", "AWS", "RPA", "Oracle SQL", "Automation"
     ]
 
     return (
@@ -35,41 +35,46 @@ const AboutSection: React.FC = () => {
                             </StyledCard>
                         </AnimationComponent>
                     </Grid>
+
+                    <Grid size={{ xs: 8, md: 3 }}>
+                        <StyledCard variant="outlined">
+                            <WorkspacePremiumIcon />
+                            <Typography sx={{ textAlign: "center", fontWeight: 600 }}>Experience</Typography>
+                            <Typography sx={{ textAlign: "center" }}>1 year</Typography>
+                            <Typography sx={{ textAlign: "center" }}>Software Developer Jr</Typography>
+                        </StyledCard>
+
+                    </Grid>
+
                     <Grid size={{ xs: 8, md: 3 }}>
                         <AnimationComponent moveDirection="left">
                             <StyledCard variant="outlined">
                                 <SchoolIcon />
                                 <Typography sx={{ textAlign: "center", fontWeight: 600 }}>Education</Typography>
                                 <Typography sx={{ textAlign: "center" }}>Bachelors Degree</Typography>
-                                <Typography sx={{ textAlign: "center" }}>Systems Analist</Typography>
+                                <Typography sx={{ textAlign: "center" }}>Systems Analysis</Typography>
                             </StyledCard>
                         </AnimationComponent>
 
                     </Grid>
+
+
                 </Grid>
-                <Box sx={{ pb: 1 }}>
+                <Box sx={{ pb: 3 }}>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Cras porta semper velit vel rutrum.
-                        Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris.
-                        Phasellus a ultrices elit.
-                        Curabitur ut diam eu orci auctor pretium.
-                        Nullam ultricies erat quam, eget porta velit vehicula sit amet.
-                        Nullam sodales iaculis metus, sed vestibulum nisl vulputate at.
-                        Integer in pulvinar libero.
-                        Donec ornare est quis tortor varius efficitur.
-                        Maecenas sed erat quis felis facilisis pellentesque.
-                        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id felis convallis, luctus lorem eget, varius dolor.
+                        Analista de Sistemas Full Stack com experiência no desenvolvimento de aplicações utilizando React, Node.js e .NET, além de integração com APIs RESTful e bancos de dados relacionais. Atuo na construção de soluções escaláveis e de fácil manutenção.
+                        Tenho vivência em automação de processos (RPA) e participação em todo o ciclo de desenvolvimento. Também possuo experiência com ServiceNow, atuando na gestão de incidentes e suporte a operações de TI.
+                        Familiaridade com metodologias ágeis e desenvolvimento de interfaces modernas e responsivas.
                     </Typography>
                 </Box>
                 <hr />
-                <Box sx={{ id: "skills", pt: 1, mb: 3 }}>
+                <Box id="skills" sx={{ pt: 1, mb: 3 }}>
                     <Typography variant="h3" sx={{ textAlign: "center", fontWeight: 300 }}>Skills</Typography>
                 </Box>
                 <Box sx={{ mb: 5 }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {skillsSet.map((skill, index) => (
-                            <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+                            <Grid key={index} size={{ xs: 2, sm: 4, md: 2 }}>
                                 <StyledCard variant="outlined" >
                                     {skill}
                                 </StyledCard>
