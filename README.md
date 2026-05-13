@@ -2,11 +2,19 @@
 
 Aplicação web desenvolvida para apresentar meus projetos, habilidades e experiências como Desenvolvedor Full Stack, com foco em performance, responsividade e boa experiência do usuário.
 
-<img width="1904" height="948" alt="{84C0F809-42B6-495B-93A6-C9B5979746F8}" src="https://github.com/user-attachments/assets/0a0cd595-9a1a-471d-86c4-e0828f03ad61" />
+---
+## 🌐 Deploy
 
-Link do projeto publicado: https://produtos-react-nine.vercel.app/
+Acesse o projeto online:  
+👉 [Levi Almeida](https://https://my-portifolio-six-taupe.vercel.app/)
+
 ---
 
+## 📸 Preview
+
+<img width="1901" height="908" alt="{90C47BD2-9874-4073-B4CE-4F28A834B40E}" src="https://github.com/user-attachments/assets/0d9b73b2-309b-4acb-9b4c-ecb384c2a58c" />
+
+---
 ## ✨ Funcionalidades
 
 - 📱 Layout responsivo para diferentes dispositivos
@@ -29,7 +37,7 @@ Link do projeto publicado: https://produtos-react-nine.vercel.app/
 
 ---
 
-👨‍💻 Autor
+##👨‍💻 Autor
 
 Levi Almeida
 📧 Email: levi02almeida@emailgmail.com
