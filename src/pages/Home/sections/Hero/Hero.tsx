@@ -54,8 +54,8 @@ const Hero = () => {
 
     return (
         <>
-            <StyledHero>
-                <Container sx={{ maxWidth: "lg" }}>
+            <StyledHero id="hero">
+                <Container  sx={{ maxWidth: "lg" }}>
                     <Grid container spacing={2}>
                         <Grid size={{ xs: 12, md: 5 }}>
                             <Box sx={{ position: "relative", pb: 3 }}>

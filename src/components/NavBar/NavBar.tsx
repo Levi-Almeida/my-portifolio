@@ -32,9 +32,24 @@ export const StyledDesktopToolbar = styled(Toolbar)(({ theme }) => ({
         display: "flex",
         justifyContent: "space-evenly",
     },
+    height: "80px",
 }));
 
 export default function Navbar() {
+
+    const [scrolled, setScrolled] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -47,15 +62,51 @@ export default function Navbar() {
 
     const handleSmoothScroll = (id: string) => {
         const element = document.getElementById(id);
+
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-            handleClose();
+            const navbarHeight = 80;
+            if (id != "hero") {
+
+                const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                    top: elementPosition - navbarHeight,
+                    behavior: "smooth",
+                });
+                handleClose();
+            } else {
+                element.scrollIntoView({ behavior: "smooth" });
+                handleClose();
+            }
         }
     };
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="absolute">
+            <AppBar position='fixed' sx={{
+                background: scrolled
+                    ? "rgba(20,20,20,0.7)"
+                    : "transparent",
+
+                backdropFilter: scrolled
+                    ? "blur(10px)"
+                    : "none",
+
+                WebkitBackdropFilter: scrolled
+                    ? "blur(10px)"
+                    : "none",
+
+                boxShadow: scrolled
+                    ? "0 4px 20px rgba(0,0,0,0.3)"
+                    : "none",
+
+                borderBottom: scrolled
+                    ? "1px solid rgba(255,255,255,0.08)"
+                    : "1px solid transparent",
+
+                transition: "all 0.3s ease",
+            }}>
                 <StyledMobileToolbar>
                     <IconButton
                         size="large"
@@ -78,6 +129,9 @@ export default function Navbar() {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
+                        <MenuList onClick={() => handleSmoothScroll("hero")}>
+                            <StyledNavLink>Home</StyledNavLink>
+                        </MenuList>
                         <MenuList onClick={() => handleSmoothScroll("about")}>
                             <StyledNavLink>About</StyledNavLink>
                         </MenuList>
@@ -90,6 +144,9 @@ export default function Navbar() {
                     </Menu>
                 </StyledMobileToolbar>
                 <StyledDesktopToolbar variant="regular">
+                    <MenuList onClick={() => handleSmoothScroll("hero")}>
+                        <StyledNavLink>Home</StyledNavLink>
+                    </MenuList>
                     <MenuList onClick={() => handleSmoothScroll("about")}>
                         <StyledNavLink>About</StyledNavLink>
                     </MenuList>
